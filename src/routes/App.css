@@ -1,0 +1,51 @@
+.app {
+  display: grid;
+  grid-template-areas: "nav main";
+  grid-template-columns: 15% 85%;
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(#111, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.kanji {
+  display: block;
+  font-size: 69vmin;
+  color: hsl(345deg, 100%, 50%);
+  opacity: 0.11;
+}
+
+.app > main {
+  grid-area: main;
+  padding: 8vmin;
+}
+
+.app > nav {
+  grid-area: nav;
+  height: 100%;
+  background-color: hsla(345deg, 100%, 10%, 0.69);
+  color: white;
+}
+.app > nav ul {
+  list-style: none;
+}
+.app > nav a {
+  color: inherit;
+  text-transform: uppercase;
+}
+.app > nav a:hover {
+  color: hsla(345deg, 100%, 50%, 0.69);
+}

@@ -43,13 +43,13 @@ fn main() {
         for d in domains {
             let mut guard = thread_arc.0.lock().unwrap();
             guard.statuses.insert(d, 0);
-            thread::spawn(vitals_monitor(d, 1000, tx.clone()));
+            thread::spawn(vitals_monitor(d, 30000, tx.clone()));
         }
 
         for received in rx {
             let mut guard = thread_arc.0.lock().unwrap();
             guard.statuses.insert(received.0, received.1);
-            println!("{}: {}", received.0, received.1);
+            //println!("{}: {}", received.0, received.1);
         }
     });
 
